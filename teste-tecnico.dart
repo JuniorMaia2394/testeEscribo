@@ -2,15 +2,32 @@ import 'dart:io';
 
 void main(){
 print( '--- Seleção de Desenvolvedor de Software - Escribo ---\n' ); 
-
-print('INFORME UM NÚMERO INTEIRO:');
-var input = stdin.readLineSync();
-int num = int.parse(input);
-  dividendo(num);
+bool op = true;
+while(op){
+  
+    dividendo();
+    print('Deseja continuar? [s/n]');
+    var input = stdin.readLineSync();
+    if(input == 'n'){
+      op = false;
+      print('--- PROGRAMA FINALIZADO ---');
+    } else if(input == 's'){
+      op =true;      
+    } else {
+      op = false;
+      print('COMANDO INVÁLIDO');
+    }
+  
+  
+}
+  
   
 }
 
-dividendo(int num){
+dividendo(){
+  print('INFORME UM NÚMERO INTEIRO:');
+var input = stdin.readLineSync();
+int num = int.parse(input);
   if(num<=0){
 	print('VALOR INVÁLIDO!');
 } else {
@@ -29,3 +46,7 @@ print(soma);
 }
   
 }
+
+
+
+
